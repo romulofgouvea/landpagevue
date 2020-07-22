@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import Dashboard from '../views/Dashboard.vue';
 
 import { ROUTES } from "@/config/constants";
 import store from '@/store';
@@ -13,13 +14,18 @@ const routes = [
     name: ROUTES.HOME.name,
     component: Home
   },
-]
+  {
+    path: ROUTES.DASHBOARD.path,
+    name: ROUTES.DASHBOARD.name,
+    component: Dashboard
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(route => route.meta.requiresAuth)) {

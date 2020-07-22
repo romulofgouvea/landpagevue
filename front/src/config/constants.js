@@ -3,5 +3,6 @@ export const KEYS_SESSION = {
 }
 
 export const ROUTES = {
-    HOME: { path: '/', name: 'Home' },
+    HOME: { path: '/home', name: 'Home' },
+    DASHBOARD: { path: '/', name: 'Dashboard' },
 }
