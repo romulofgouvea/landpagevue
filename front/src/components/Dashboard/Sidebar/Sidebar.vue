@@ -1,28 +1,12 @@
 <template>
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link text-center">
-      <!-- <img
-        src=""
-        alt="AdminLTE Logo"
-        class="brand-image img-circle elevation-3"
-        style="opacity: .8"
-      />-->
+    <a href="#" class="brand-link text-center">
       <span class="brand-text font-weight-light">LH Consultoria</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <!-- <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
-        </div>-->
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul
@@ -31,29 +15,63 @@
           role="menu"
           data-accordion="false"
         >
-          <li class="nav-header">Ações rapidas</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="ri-layout-2-fill"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
 
-          <li class="nav-item has-treeview menu-open">
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Entrada</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Saida</p>
-                </a>
-              </li>
-            </ul>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icofont-settings-alt"></i>
+              <p>Gerenciamento</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icofont-law-alt-2"></i>
+              <p>Balancete</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="icofont-database"></i>
+              <p>Estoque</p>
+            </a>
           </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+
+    <nav class="container mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <li class="nav-header">Ações rapidas</li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link btn-success text-white">
+            <i class="icofont-plus" aria-hidden="true"></i>
+            <p>Entrada</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link btn-danger text-white">
+            <i class="icofont-minus" aria-hidden="true"></i>
+            <p>Saída</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </aside>
 </template>
 
@@ -63,5 +81,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.sidebar {
+  height: calc(80% - (3.5rem + 1px)) !important;
+}
+
+.main-sidebar i {
+  padding: 0 6px;
+}
 </style>
