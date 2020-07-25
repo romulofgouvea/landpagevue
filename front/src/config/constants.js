@@ -4,5 +4,6 @@ export const KEYS_SESSION = {
 
 export const ROUTES = {
     HOME: { path: '/home', name: 'Home' },
-    DASHBOARD: { path: '/', name: 'Dashboard' },
+    DASHBOARD: { path: '/dashboard', name: 'Dashboard' },
+    LOGIN_DASHBOARD: { path: '/', name: 'LoginDashboard' },
 }

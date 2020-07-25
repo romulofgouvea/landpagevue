@@ -1,29 +1,32 @@
 import Vue from 'vue';
 import VueSession from 'vue-session';
-import $ from "jquery/dist/jquery";
+import * as $ from "jquery/dist/jquery";
 import _ from 'lodash';
+import AOS from 'aos';
+import Vuelidate from 'vuelidate';
 
+//GENERAL
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
 import './registerServiceWorker';
 
-window.$ = window.jQuery = $;
-
+//CONFIGS
+global.$ = window.$ = window.jQuery = $;
 Object.defineProperty(Vue.prototype, '_', { value: _ });
 window._ = _;
+Vue.config.productionTip = false;
 
+//INTERFACES
 import 'popper.js/dist/umd/popper';
 import 'bootstrap/dist/js/bootstrap';
-
 import "./assets/js/home.js";
+import 'aos/dist/aos.css';
 
-Vue.config.productionTip = false;
+//USES
 Vue.use(VueSession);
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+Vue.use(Vuelidate);
 
 new Vue({
   created() {

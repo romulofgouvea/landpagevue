@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Dashboard from '../views/Dashboard.vue';
+import LoginDashboard from '../views/LoginDashboard.vue';
 
 import { ROUTES } from "@/config/constants";
 import store from '@/store';
@@ -18,6 +19,11 @@ const routes = [
     path: ROUTES.DASHBOARD.path,
     name: ROUTES.DASHBOARD.name,
     component: Dashboard
+  },
+  {
+    path: ROUTES.LOGIN_DASHBOARD.path,
+    name: ROUTES.LOGIN_DASHBOARD.name,
+    component: LoginDashboard
   },
 ];
 
