@@ -98,7 +98,6 @@ export default {
     handleSubmit(e) {
       this.submitted = true;
 
-      // stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;

@@ -28,9 +28,26 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      if (savedPosition) {
+        setTimeout(() => {
+          resolve(savedPosition);
+        }, 200);
+      } else if (to.hash) {
+        setTimeout(() => {
+          resolve({ selector: to.hash });
+        }, 200);
+      } else {
+        setTimeout(() => {
+          reject({ x: 0, y: 0 })
+        }, 200);
+      }
+    })
+  },
+  routes,
+  mode: 'history',
 });
 
 router.beforeEach((to, from, next) => {

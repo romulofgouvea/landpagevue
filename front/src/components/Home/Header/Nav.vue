@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light nav-menu">
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto align-items-center">
         <li
           :class="[item.isActive ? 'nav-item active': 'nav-item']"
           v-for="item in listLinksNav"
@@ -13,10 +13,7 @@
         </li>
 
         <li class="nav-item btn get-started">
-          <a
-            class="bg-primary text-white"
-            href="https://www.consultorialh.com.br/fluxo-financeiro/login"
-          >Entrar</a>
+          <router-link class="bg-primary text-white" :to="ROUTES.LOGIN_DASHBOARD.path">Entrar</router-link>
         </li>
       </ul>
     </div>
@@ -24,12 +21,14 @@
 </template>
 
 <script>
+import { ROUTES } from "@/config/constants";
+
 export default {
   name: "Nav",
   props: {
-    theme: String
+    theme: String,
   },
-  data: function() {
+  data: function () {
     return {
       listLinksNav: [
         { name: "Home", redirect: "#header", isActive: true },
@@ -38,17 +37,18 @@ export default {
         { name: "Recursos", redirect: "#features", isActive: false },
         // { name: "Time", redirect: "#team", isActive: false },
         { name: "Preços", redirect: "#pricing", isActive: false },
-        { name: "Contato", redirect: "#contact", isActive: false }
-      ]
+        { name: "Contato", redirect: "#contact", isActive: false },
+      ],
+      ROUTES,
     };
   },
   methods: {
     setLinkActive(name) {
-      this.listLinksNav.forEach(i => {
+      this.listLinksNav.forEach((i) => {
         i.isActive = i.name === name;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -60,6 +60,7 @@ export default {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color: #fff !important;
   * {
     margin: 0;
     padding: 0;
