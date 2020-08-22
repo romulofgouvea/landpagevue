@@ -3,13 +3,6 @@ $font-family-base: "Open Sans", sans-serif;
 //Light Mode-------------------------
 $body-bg: #f7fbfe;
 
-$white:    #fff;
-$black:    #222;
-
-$title-white:    #888;
-$title-black:    #111;
-
-
 //Dark Mode Home --------------------------
 $home-body-bg: #444444;
 
@@ -41,7 +34,7 @@ $primary-fade: rgba($primary, .4);
 $btn-focus-box-shadow: none;
 $input-btn-focus-width: 0;
 
-$navbar-light-color: rgba($white, .5);
+$navbar-light-color: rgba($home-title-white, .5);
 $navbar-light-hover-color: rgba($primary, .7) !default;
 $navbar-light-active-color: rgba($primary, .9) !default;
 $navbar-light-toggler-border-color: rgba($primary, .1) !default;

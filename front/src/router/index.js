@@ -30,7 +30,7 @@ const routes = [
 const router = new VueRouter({
   base: process.env.BASE_URL,
   scrollBehavior(to, from, savedPosition) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       if (to.hash) {
         setTimeout(() => {
           resolve({ selector: to.hash });
@@ -41,7 +41,7 @@ const router = new VueRouter({
         }, 200);
       } else {
         setTimeout(() => {
-          reject({ x: 0, y: 0 })
+          resolve({ x: 0, y: 0 })
         }, 200);
       }
     })

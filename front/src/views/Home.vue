@@ -100,7 +100,7 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  color: $black;
+  color: $home-black;
 }
 
 .section-title h2::before,

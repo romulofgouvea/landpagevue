@@ -4,13 +4,11 @@
       <ul class="navbar-nav mr-auto align-items-center">
         <li
           class="nav-item"
-          :class="[item.isActive ? 'active': '']"
+          :class="[item.name == 'Home' ? 'active': '']"
           v-for="item in listLinksNav"
           :key="item.name"
         >
-          <router-link class="nav-link" :to="item.redirect">
-            <a @click="setLinkActive(item.name)">{{item.name}}</a>
-          </router-link>
+          <a :href="item.redirect" class="nav-link">{{item.name}}</a>
         </li>
 
         <li class="nav-item btn get-started">
@@ -32,7 +30,7 @@ export default {
   data: function () {
     return {
       listLinksNav: [
-        { name: "Home", redirect: "#header", isActive: true },
+        { name: "Home", redirect: "#header", isActive: false },
         { name: "Sobre nós", redirect: "#about", isActive: false },
         { name: "Servicos", redirect: "#services", isActive: false },
         { name: "Recursos", redirect: "#features", isActive: false },
@@ -46,7 +44,7 @@ export default {
   methods: {
     setLinkActive(name) {
       this.listLinksNav.forEach((i) => {
-        i.isActive = i.name == name;
+        i.isActive = i.name === name;
       });
     },
   },
@@ -55,6 +53,10 @@ export default {
 
 <style lang="scss">
 @import "@/assets/css/_variables.scss";
+
+.navbar-light .navbar-nav .nav-link {
+  color: $home-black;
+}
 
 /* Mobile Navigation */
 .nav-menu {
@@ -72,35 +74,38 @@ export default {
       position: relative;
       white-space: nowrap;
       float: left;
-    }
-  }
-  a {
-    display: block;
-    position: relative;
-    color: $home-black;
-    padding: 8px 0 12px 25px;
-    transition: 0.3s;
-    font-size: 14px;
-    font-family: "Open Sans", sans-serif;
-    &:hover {
-      color: $primary;
-      text-decoration: none;
-    }
-  }
-  .active {
-    > a {
-      color: $primary;
-      text-decoration: none;
-    }
-  }
-  li {
-    &:hover {
-      > a {
-        color: $primary;
-        text-decoration: none;
+      color: $home-black;
+
+      &:hover {
+        > a {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+
+      a {
+        display: block;
+        position: relative;
+        color: $home-black;
+        padding: 8px 0 12px 25px;
+        transition: 0.3s;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        &:hover {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+
+      .active {
+        > a {
+          color: $primary;
+          text-decoration: none;
+        }
       }
     }
   }
+
   .get-started {
     a {
       background: $primary;
