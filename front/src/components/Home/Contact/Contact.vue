@@ -11,24 +11,28 @@
             <h3>LH Consultoria</h3>
             <p>Produzindo valor para cada cliente em especial!</p>
             <div class="social-links">
-              <a href="#" class="twitter">
+              <!-- <a href="#" class="twitter">
                 <i class="icofont-twitter"></i>
               </a>
               <a href="#" class="facebook">
                 <i class="icofont-facebook"></i>
-              </a>
-              <a href="#" class="instagram">
+              </a>-->
+              <a
+                href="https://www.instagram.com/lhconsultoriaempresarial"
+                target="_blank"
+                class="instagram"
+              >
                 <i class="icofont-instagram"></i>
               </a>
-              <a href="#" class="linkedin">
+              <!-- <a href="#" class="linkedin">
                 <i class="icofont-linkedin"></i>
-              </a>
+              </a>-->
             </div>
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-          <div class="info">
+          <!-- <div class="info">
             <div>
               <i class="ri-map-pin-line"></i>
               <p>
@@ -46,11 +50,11 @@
               <i class="ri-phone-line"></i>
               <p>+55 3855-9900</p>
             </div>
-          </div>
+          </div>-->
         </div>
 
         <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form id="formHomeContact" class="php-email-form">
             <div class="form-group">
               <input
                 type="text"
@@ -58,10 +62,14 @@
                 class="form-control"
                 id="name"
                 placeholder="Seu nome"
-                data-rule="minlen:4"
-                data-msg="Please enter at least 4 chars"
+                :class="{ 'is-invalid': submitted && $v.form.name.$error }"
+                v-model="form.name"
+                required
               />
-              <div class="validate"></div>
+              <div v-if="submitted && $v.form.name.$error" class="invalid-feedback">
+                <span v-if="!$v.form.name.required">* O nome é obrigatório.</span>
+                <span v-if="!$v.form.name.minLength">* O nome deve ter no minimo 6 caracteres.</span>
+              </div>
             </div>
             <div class="form-group">
               <input
@@ -70,10 +78,14 @@
                 name="email"
                 id="email"
                 placeholder="Seu Email"
-                data-rule="email"
-                data-msg="Please enter a valid email"
+                :class="{ 'is-invalid': submitted && $v.form.email.$error }"
+                v-model="form.email"
+                required
               />
-              <div class="validate"></div>
+              <div v-if="submitted && $v.form.email.$error" class="invalid-feedback">
+                <span v-if="!$v.form.email.required">* Email é obrigatório.</span>
+                <span v-if="!$v.form.email.email">* Email é inválido.</span>
+              </div>
             </div>
             <div class="form-group">
               <input
@@ -82,29 +94,40 @@
                 name="subject"
                 id="subject"
                 placeholder="Assunto"
-                data-rule="minlen:4"
-                data-msg="Please enter at least 8 chars of subject"
+                :class="{ 'is-invalid': submitted && $v.form.subject.$error }"
+                v-model="form.subject"
+                required
               />
-              <div class="validate"></div>
+              <div v-if="submitted && $v.form.subject.$error" class="invalid-feedback">
+                <span v-if="!$v.form.subject.required">* O assunto é obrigatório.</span>
+                <span v-if="!$v.form.subject.minLength">* O assunto deve ter no minimo 6 caracteres</span>
+              </div>
             </div>
             <div class="form-group">
               <textarea
                 class="form-control"
                 name="message"
                 rows="5"
-                data-rule="required"
-                data-msg="Please write something for us"
                 placeholder="Menssagem"
+                :class="{ 'is-invalid': submitted && $v.form.message.$error }"
+                v-model="form.message"
+                required
               ></textarea>
-              <div class="validate"></div>
+              <div v-if="submitted && $v.form.message.$error" class="invalid-feedback">
+                <span v-if="!$v.form.message.required">* A mensagem é obrigatória.</span>
+                <span v-if="!$v.form.message.minLength">* A mensagem deve ter no minimo 6 caracteres</span>
+              </div>
             </div>
             <div class="mb-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
             </div>
             <div class="text-center">
-              <button type="submit">Enviar mensagem</button>
+              <button
+                @click.stop.prevent="handleSubmit"
+                class="btn btn-lg btn-primary btn-login text-uppercase font-weight-bold mt-2"
+              >Enviar mensagem</button>
             </div>
           </form>
         </div>
@@ -114,8 +137,41 @@
 </template>
 
 <script>
+import { required, email, minLength } from "vuelidate/lib/validators";
+
 export default {
-  name: "Contact"
+  name: "Contact",
+  data: function () {
+    return {
+      form: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+      submitted: false,
+    };
+  },
+  validations: {
+    form: {
+      name: { required, minLength: minLength(6) },
+      email: { required, email },
+      subject: { required, minLength: minLength(6) },
+      message: { required, minLength: minLength(6) },
+    },
+  },
+  methods: {
+    handleSubmit(e) {
+      this.submitted = true;
+
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      }
+
+      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.form, e));
+    },
+  },
 };
 </script>
 
@@ -223,17 +279,6 @@ export default {
         -webkit-animation: animate-loading 1s linear infinite;
         animation: animate-loading 1s linear infinite;
       }
-    }
-    button[type="submit"] {
-      background: $primary;
-      border: 0;
-      padding: 10px 24px;
-      color: #fff;
-      transition: 0.4s;
-      border-radius: 50px;
-    }
-    button[type="submit"]:hover {
-      background: #2383c4;
     }
   }
 }

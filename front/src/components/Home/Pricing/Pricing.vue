@@ -39,7 +39,7 @@
               <li>Fluxo de caixa</li>
               <li>Agendamento de tarefas</li>
               <li>Tomada de decisão</li>
-              <li class="na">Planejamento estratégico</li>
+              <li>Planejamento estratégico</li>
             </ul>
             <div class="btn-wrap">
               <a href="#contact" class="btn btn-primary btn-buy btn-lg scrollto">Entre em contato</a>

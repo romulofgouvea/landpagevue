@@ -23,8 +23,8 @@
                       v-model="form.email"
                     />
                     <div v-if="submitted && $v.form.email.$error" class="invalid-feedback">
-                      <span v-if="!$v.form.email.required">*Email é obrigatório</span>
-                      <span v-if="!$v.form.email.email">*Email inválido</span>
+                      <span v-if="!$v.form.email.required">* Email é obrigatório.</span>
+                      <span v-if="!$v.form.email.email">* Email é inválido.</span>
                     </div>
                   </div>
 
@@ -39,10 +39,10 @@
                       v-model="form.password"
                     />
                     <div v-if="submitted && $v.form.password.$error" class="invalid-feedback">
-                      <span v-if="!$v.form.password.required">*Senha é obrigatória</span>
+                      <span v-if="!$v.form.password.required">* Senha é obrigatória.</span>
                       <span
                         v-if="!$v.form.password.minLength"
-                      >*A senha deve ter no minnimo 6 caracteres</span>
+                      >* A senha deve ter no minimo 6 caracteres.</span>
                     </div>
                   </div>
 
