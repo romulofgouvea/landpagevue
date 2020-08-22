@@ -13,11 +13,12 @@ import Content from "../components/Dashboard/Content/Content";
 
 export default {
   name: "Dashboard",
+  title: "Dashboard",
   components: {
     Header,
     Sidebar,
-    Content
-  }
+    Content,
+  },
 };
 </script>
 

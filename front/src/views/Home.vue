@@ -42,6 +42,9 @@ import Footer from "@/components/Home/Footer/Footer";
 
 export default {
   name: "Home",
+  title() {
+    return `Home`;
+  },
   components: {
     Header,
     Hero,
@@ -52,13 +55,13 @@ export default {
     Pricing,
     Faq,
     Contact,
-    Footer
+    Footer,
   },
-  data: function() {
+  data: function () {
     let darkmode = true;
 
     return {
-      theme: darkmode ? "light" : "dark"
+      theme: darkmode ? "light" : "dark",
     };
   },
   mounted() {
@@ -68,7 +71,7 @@ export default {
         location.href = anchor;
       }
     });
-  }
+  },
 };
 </script>
 

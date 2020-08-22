@@ -29,6 +29,11 @@ import 'aos/dist/aos.css';
 Vue.use(VueSession);
 Vue.use(Vuelidate);
 
+//MIXINS
+import titleMixin from './core/mixins/titleMixin';
+
+Vue.mixin(titleMixin)
+
 new Vue({
   created() {
     AOS.init({

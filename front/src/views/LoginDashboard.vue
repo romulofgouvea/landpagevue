@@ -75,6 +75,7 @@ import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default {
   name: "LoginDashboard",
+  title: "Login LH Consultoria",
   data: function () {
     return {
       form: {
