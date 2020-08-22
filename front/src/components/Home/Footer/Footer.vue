@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
@@ -27,21 +27,23 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/css/_variables.scss";
+
 #footer {
-  background: #fff;
+  background-color: $home-body-bg;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 30px 0;
-  color: #222222;
+  color: $home-black;
   font-size: 14px;
   .credits {
     font-size: 13px;
     padding-top: 5px;
-    color: #222222;
+    color: $home-black;
   }
   .footer-links {
     a {

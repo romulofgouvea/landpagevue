@@ -4,7 +4,7 @@
     <div class="container d-flex align-items-center">
       <div class="logo mr-auto">
         <a href="/">
-          <h1 class="text-dark">
+          <h1 class="text-home-black">
             <span>LH Consultoria</span>
           </h1>
         </a>
@@ -25,20 +25,22 @@ import Nav from "./Nav";
 export default {
   name: "Header",
   components: {
-    Nav
-  }
+    Nav,
+  },
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/css/_variables.scss";
+
 #header {
+  background-color: $home-body-bg;
   z-index: 997;
   transition: all 0.5s;
   padding: 22px 0;
   &.header-scrolled {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
-    background: #fff;
   }
   .logo {
     h1 {
@@ -64,7 +66,7 @@ export default {
 
 @media (max-width: 768px) {
   #header {
-    background: #fff;
+    background: $home-body-bg;
   }
   #header .logo h1 {
     font-size: 28px;

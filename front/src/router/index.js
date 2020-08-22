@@ -31,15 +31,13 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve, reject) => {
-      if (savedPosition) {
-        setTimeout(() => {
-          resolve(savedPosition);
-        }, 200);
-      } 
-      
       if (to.hash) {
         setTimeout(() => {
           resolve({ selector: to.hash });
+        }, 200);
+      } else if (savedPosition) {
+        setTimeout(() => {
+          resolve(savedPosition);
         }, 200);
       } else {
         setTimeout(() => {

@@ -1,8 +1,8 @@
 <template>
   <section id="features" class="features">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title" data-aos="fade-up">
-        <h2>Recursos</h2>
+        <h2 class="text-home-black">Recursos</h2>
         <p>Alguns recursos que sua pequena empresa precisa</p>
       </div>
 
@@ -78,18 +78,22 @@
 
 <script>
 export default {
-  name: "Feature"
+  name: "Feature",
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/css/_variables.scss";
+
 .features {
+  background-color: $home-body-bg;
   .icon-box {
     display: flex;
     align-items: center;
     padding: 20px;
-    background: #f6f6f6;
+    background: $home-body-bg;
     transition: ease-in-out 0.3s;
+    box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.15) !important;
     i {
       font-size: 32px;
       padding-right: 10px;
@@ -102,15 +106,16 @@ export default {
       line-height: 1;
       font-size: 16px;
       a {
-        color: #222222;
+        color: $home-black;
         transition: ease-in-out 0.3s;
         &:hover {
-          color: #3498db;
+          color: $primary-fade;
+          text-decoration: none;
         }
       }
     }
     &:hover {
-      background: #eef7fc;
+      background: $home-white;
     }
   }
 }

@@ -1,18 +1,47 @@
-// $body-bg: #1c1c21;
-$body-color: #333;
-
 $font-family-base: "Open Sans", sans-serif;
 
-$primary: #333;
+//Light Mode-------------------------
+$body-bg: #f7fbfe;
 
+$white:    #fff;
+$black:    #222;
+
+$title-white:    #888;
+$title-black:    #111;
+
+
+//Dark Mode Home --------------------------
+$home-body-bg: #444444;
+
+$home-white:    #222;
+$home-black:    #fff;
+
+$home-title-white:    #111;
+$home-title-black:    #888;
+
+//Genral ------------------------------
+
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "home-color-logo": #333,
+    "home-black": $home-black,
+    "home-white": $home-white,
+  ),
+  $colors
+);
+
+// $title-white:    #111;
+// $title-black:    #888;
+
+$primary: #ffed01;
 $primary-fade: rgba($primary, .4);
-
-$logo-color-background: #333;
 
 $btn-focus-box-shadow: none;
 $input-btn-focus-width: 0;
 
-// $navbar-light-color: rgba($primary, .5) !default;
+$navbar-light-color: rgba($white, .5);
 $navbar-light-hover-color: rgba($primary, .7) !default;
 $navbar-light-active-color: rgba($primary, .9) !default;
 $navbar-light-toggler-border-color: rgba($primary, .1) !default;

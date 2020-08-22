@@ -1,8 +1,8 @@
 <template>
   <section id="services" class="services">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title" data-aos="fade-up">
-        <h2>Serviços</h2>
+        <h2 class="text-home-black">Serviços</h2>
         <p>Alguns serviços que fornecemos aos clientes</p>
       </div>
 
@@ -71,11 +71,12 @@ export default {
 @import "@/assets/css/_variables.scss";
 
 .services {
+  background-color: $home-body-bg;
   .icon-box {
     padding: 30px;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: $home-white;
     box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
@@ -102,7 +103,7 @@ export default {
         border-radius: 0px;
       }
       .icon {
-        background: #fff;
+        background: $home-white;
         i {
           color: $primary;
         }
@@ -122,7 +123,7 @@ export default {
     i {
       font-size: 36px;
       line-height: 1;
-      color: #fff;
+      color: $home-white;
     }
   }
   .title {
@@ -130,7 +131,7 @@ export default {
     margin-bottom: 15px;
     font-size: 18px;
     a {
-      color: #111;
+      color: $home-title-black;
       text-decoration: none;
     }
   }
@@ -142,6 +143,6 @@ export default {
 }
 .services .icon-box:hover .title a,
 .services .icon-box:hover .description {
-  color: #fff;
+  color: $home-white;
 }
 </style>

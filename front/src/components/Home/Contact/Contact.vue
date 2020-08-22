@@ -1,14 +1,14 @@
 <template>
   <section id="contact" class="contact">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title" data-aos="fade-up">
-        <h2>Contato</h2>
+        <h2 class="text-home-black">Contato</h2>
       </div>
 
       <div class="row">
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="contact-about">
-            <h3>LH Consultoria</h3>
+            <h3 class="text-home-black">LH Consultoria</h3>
             <p>Produzindo valor para cada cliente em especial!</p>
             <div class="social-links">
               <!-- <a href="#" class="twitter">
@@ -50,7 +50,7 @@
               <i class="ri-phone-line"></i>
               <p>+55 3855-9900</p>
             </div>
-          </div>-->
+          </div> -->
         </div>
 
         <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
@@ -179,7 +179,9 @@ export default {
 @import "@/assets/css/_variables.scss";
 
 .contact {
+  background-color: $home-body-bg;
   .contact-about {
+    color: $home-white;
     h3 {
       font-size: 28px;
       margin: 0 0 10px 0;
@@ -187,7 +189,7 @@ export default {
       line-height: 1;
       font-weight: 700;
       letter-spacing: 1px;
-      color: #222222;
+      color: $home-black;
     }
     p {
       font-size: 14px;
@@ -201,7 +203,7 @@ export default {
     a {
       font-size: 18px;
       display: inline-block;
-      background: #fff;
+      background: $home-white;
       color: $primary;
       line-height: 1;
       padding: 8px 0;
@@ -214,13 +216,13 @@ export default {
       border: 1px solid $primary;
       &:hover {
         background: $primary;
-        color: #fff;
+        color: $home-white;
         text-decoration: none;
       }
     }
   }
   .info {
-    color: #444444;
+    color: $home-black;
     i {
       font-size: 32px;
       color: $primary;
@@ -243,7 +245,7 @@ export default {
     }
     .error-message {
       display: none;
-      color: #fff;
+      color: $home-white;
       background: #ed3c0d;
       text-align: left;
       padding: 15px;
@@ -256,7 +258,7 @@ export default {
     }
     .sent-message {
       display: none;
-      color: #fff;
+      color: $home-white;
       background: #18d26e;
       text-align: center;
       padding: 15px;
@@ -264,7 +266,7 @@ export default {
     }
     .loading {
       display: none;
-      background: #fff;
+      background: $home-white;
       text-align: center;
       padding: 15px;
       &:before {
@@ -284,7 +286,7 @@ export default {
 }
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 0;
+  border-radius: 3px;
   box-shadow: none;
   font-size: 14px;
 }

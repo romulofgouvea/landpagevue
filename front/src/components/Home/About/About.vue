@@ -1,8 +1,8 @@
 <template>
   <section id="about" class="about">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title" data-aos="fade-up">
-        <h2>Sobre nós</h2>
+        <h2 class="text-home-black">Sobre nós</h2>
       </div>
 
       <div class="row content text-justify">
@@ -61,7 +61,7 @@
 
 <script>
 export default {
-  name: "About"
+  name: "About",
 };
 </script>
 
@@ -69,6 +69,7 @@ export default {
 @import "@/assets/css/_variables.scss";
 
 .about {
+  background-color: $home-body-bg;
   .content {
     h3 {
       font-weight: 600;
@@ -112,7 +113,7 @@ export default {
       animation-delay: 0.8s;
       margin-top: 6px;
       &:hover {
-        color: #fff;
+        color: $home-white;
         text-decoration: none;
       }
     }

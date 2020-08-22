@@ -1,8 +1,8 @@
 <template>
   <section id="pricing" class="pricing">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title">
-        <h2>Preços</h2>
+        <h2 class="text-home-black">Preços</h2>
         <p>Investimento para o seu negócio</p>
       </div>
 
@@ -68,21 +68,23 @@ export default {
 @import "@/assets/css/_variables.scss";
 
 .pricing {
+  background-color: $home-body-bg;
   .box {
     padding: 20px;
-    background: #f9f9f9;
+    background: $home-body-bg;
     text-align: center;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    border: 2px solid #f9f9f9;
+    border: 2px solid $home-body-bg;
+    box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.15) !important;
     h3 {
       font-weight: 400;
       padding: 15px;
       margin-top: 15px;
       font-size: 18px;
       font-weight: 600;
-      color: #222222;
+      color: $home-black;
     }
     h4 {
       font-size: 42px;
@@ -96,7 +98,7 @@ export default {
         left: -3px;
       }
       span {
-        color: #bababa;
+        color: $home-title-black;
         font-size: 16px;
         font-weight: 300;
       }
@@ -104,7 +106,7 @@ export default {
     ul {
       padding: 0;
       list-style: none;
-      color: #222222;
+      color: $home-black;
       text-align: center;
       line-height: 20px;
       font-size: 14px;
@@ -117,7 +119,7 @@ export default {
         padding-right: 4px;
       }
       .na {
-        color: #ccc;
+        color: $home-title-black;
         text-decoration: line-through;
       }
     }
@@ -132,7 +134,7 @@ export default {
       font-weight: 600;
       transition: 0.3s;
       &:hover {
-        color: #fff;
+        color: $home-white;
         text-decoration: none;
       }
     }

@@ -1,8 +1,8 @@
 <template>
   <section id="faq" class="faq">
-    <div class="container">
+    <div class="container text-home-black">
       <div class="section-title" data-aos="fade-up">
-        <h2>Perguntas Frequentes</h2>
+        <h2 class="text-home-black">Perguntas Frequentes</h2>
       </div>
 
       <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "Faq"
+  name: "Faq",
 };
 </script>
 
@@ -43,6 +43,7 @@ export default {
 @import "@/assets/css/_variables.scss";
 
 .faq {
+  background-color: $home-body-bg;
   .faq-item {
     margin: 20px 0;
     padding: 20px 0;

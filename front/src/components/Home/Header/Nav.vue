@@ -3,15 +3,18 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto align-items-center">
         <li
-          :class="[item.isActive ? 'nav-item active': 'nav-item']"
+          class="nav-item"
+          :class="[item.isActive ? 'active': '']"
           v-for="item in listLinksNav"
           :key="item.name"
         >
-          <a class="nav-link" :href="item.redirect">{{item.name}}</a>
+          <router-link class="nav-link" :to="item.redirect">
+            <a @click="setLinkActive(item.name)">{{item.name}}</a>
+          </router-link>
         </li>
 
         <li class="nav-item btn get-started">
-          <router-link class="bg-primary text-white" :to="ROUTES.LOGIN_DASHBOARD.path">Entrar</router-link>
+          <router-link class="text-home-white bg-primary" :to="ROUTES.LOGIN_DASHBOARD.path">Entrar</router-link>
         </li>
       </ul>
     </div>
@@ -29,7 +32,7 @@ export default {
   data: function () {
     return {
       listLinksNav: [
-        { name: "Home", redirect: "#header", isActive: false },
+        { name: "Home", redirect: "#header", isActive: true },
         { name: "Sobre nós", redirect: "#about", isActive: false },
         { name: "Servicos", redirect: "#services", isActive: false },
         { name: "Recursos", redirect: "#features", isActive: false },
@@ -39,6 +42,13 @@ export default {
       ],
       ROUTES,
     };
+  },
+  methods: {
+    setLinkActive(name) {
+      this.listLinksNav.forEach((i) => {
+        i.isActive = i.name == name;
+      });
+    },
   },
 };
 </script>
@@ -51,7 +61,7 @@ export default {
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #fff !important;
+  background-color: $home-body-bg !important;
   * {
     margin: 0;
     padding: 0;
@@ -67,7 +77,7 @@ export default {
   a {
     display: block;
     position: relative;
-    color: #555555;
+    color: $home-black;
     padding: 8px 0 12px 25px;
     transition: 0.3s;
     font-size: 14px;
@@ -94,13 +104,13 @@ export default {
   .get-started {
     a {
       background: $primary;
-      color: #fff;
+      color: $home-white;
       border-radius: 50px;
       margin: 0 0 0 30px;
       padding: 10px 25px;
       &:hover {
         background: $primary-fade;
-        color: #fff;
+        color: $home-white;
       }
     }
   }
@@ -114,7 +124,7 @@ export default {
       opacity: 0;
       visibility: hidden;
       padding: 10px 0;
-      background: #fff;
+      color: $home-white;
       box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
       transition: ease all 0.3s;
       border-radius: 5px;
@@ -122,7 +132,7 @@ export default {
         padding: 10px 20px;
         font-size: 14px;
         text-transform: none;
-        color: #222222;
+        color: $home-black;
         &:hover {
           color: $primary;
         }
@@ -196,7 +206,7 @@ export default {
   cursor: pointer;
   text-align: right;
   i {
-    color: #222222;
+    color: $home-black;
   }
 }
 .mobile-nav {
@@ -207,7 +217,7 @@ export default {
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background: #fff;
+  background: $home-white;
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -221,7 +231,7 @@ export default {
   a {
     display: block;
     position: relative;
-    color: #222222;
+    color: $home-black;
     padding: 10px 20px;
     font-weight: 500;
     outline: none;
@@ -249,14 +259,14 @@ export default {
     margin-top: 10px;
     a {
       background: $primary;
-      color: #fff;
+      color: $home-white;
       border-radius: 50px;
       margin: 0 15px;
       padding: 10px 30px;
       display: inline-block;
       &:hover {
-        background: #57aae1;
-        color: #fff;
+        background: $primary;
+        color: $home-white;
       }
     }
   }
@@ -307,7 +317,7 @@ export default {
   }
   .mobile-nav-toggle {
     i {
-      color: #fff;
+      color: $home-white;
     }
   }
 }

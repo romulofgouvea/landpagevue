@@ -5,13 +5,21 @@
         <div
           class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
         >
-          <h1 data-aos="fade-up">O crescimento para o seu negocio é com a LH Consultoria</h1>
+          <h1
+            class="text-home-black"
+            data-aos="fade-up"
+          >O crescimento para o seu negocio é com a LH Consultoria</h1>
           <h2
+            class="text-home-black"
             data-aos="fade-up"
             data-aos-delay="400"
           >Nosso time de talentos estará trabalhando ao seu favor</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" type="button" class="btn btn-outline-primary btn-get-started scrollto btn-lg">Começar agora</a>
+            <a
+              href="#about"
+              type="button"
+              class="btn btn-outline-primary btn-get-started scrollto btn-lg"
+            >Começar agora</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -24,11 +32,13 @@
 
 <script>
 export default {
-  name: "Hero"
+  name: "Hero",
 };
 </script>
 
 <style lang="scss">
+@import "@/assets/css/_variables.scss";
+
 @-webkit-keyframes up-down {
   0% {
     transform: translateY(10px);
@@ -49,6 +59,10 @@ export default {
   width: 100%;
   height: 70vh;
   margin-top: 70px;
+  background-color: $home-body-bg;
+  img {
+    max-width: 80%;
+  }
   h1 {
     margin: 0 0 10px 0;
     font-size: 48px;
@@ -57,7 +71,7 @@ export default {
     color: black;
   }
   h2 {
-    color: #484848;
+    color: $home-black;
     margin-bottom: 50px;
     font-size: 24px;
   }
@@ -70,7 +84,7 @@ export default {
     border-radius: 50px;
     transition: 0.5s;
     &:hover {
-      color: #fff;
+      color: $home-white;
       text-decoration: none;
     }
   }

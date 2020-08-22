@@ -96,13 +96,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/css/_variables.scss";
+
 .team {
+  background-color: $home-body-bg;
   .member {
     margin-bottom: 20px;
     overflow: hidden;
     text-align: center;
     border-radius: 5px;
-    background: #fff;
+    background: $home-white;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     .member-img {
       position: relative;
@@ -125,7 +128,7 @@ export default {
         padding-top: 8px;
         display: inline-block;
         &:hover {
-          color: #3498db;
+          color: $primary;
         }
       }
       i {

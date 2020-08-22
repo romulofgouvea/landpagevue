@@ -87,7 +87,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f7fbfe;
+  background-color: $home-body-bg;
 }
 
 .section-title {
@@ -100,7 +100,7 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  color: #222222;
+  color: $black;
 }
 
 .section-title h2::before,
@@ -142,13 +142,13 @@ section {
     width: 40px;
     height: 40px;
     border-radius: 4px;
-    background: #3498db;
-    color: #fff;
+    background: $primary;
+    color: $home-white;
     transition: all 0.4s;
     &:hover {
       text-decoration: none;
-      background: #57aae1;
-      color: #fff;
+      background: $primary-fade;
+      color: $home-white;
     }
   }
 }
@@ -161,4 +161,26 @@ section {
     transition-delay: 0 !important;
   }
 }
+
+/* Style Scroll */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $home-body-bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $home-black;
+}
+/* Style Scroll */
 </style>

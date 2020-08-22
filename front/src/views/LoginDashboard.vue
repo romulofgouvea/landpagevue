@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid">
     <div class="row no-gutter">
-      <div class="d-none d-md-flex col-md-4 col-lg-7 bg-image"></div>
-      <div class="col-md-8 col-lg-5">
+      <div class="d-none d-md-flex col-md-4 col-lg-7 bg-image bg-home-color-logo"></div>
+      <div class="col-md-8 col-lg-5 bg-light">
         <div class="login d-flex align-items-center py-5">
           <div class="container">
             <div class="row">
@@ -111,8 +111,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/css/_variables.scss";
-
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
@@ -127,7 +125,6 @@ export default {
   background-image: url("../assets/images/logo-lh.png");
   background-size: cover;
   background-position: center;
-  background-color: $logo-color-background;
   background-size: 270px 200px;
   background-repeat: no-repeat;
 }
