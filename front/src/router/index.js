@@ -35,7 +35,9 @@ const router = new VueRouter({
         setTimeout(() => {
           resolve(savedPosition);
         }, 200);
-      } else if (to.hash) {
+      } 
+      
+      if (to.hash) {
         setTimeout(() => {
           resolve({ selector: to.hash });
         }, 200);

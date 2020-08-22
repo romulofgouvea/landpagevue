@@ -7,9 +7,7 @@
           v-for="item in listLinksNav"
           :key="item.name"
         >
-          <router-link class="nav-link" :to="item.redirect">
-            <a @click="setLinkActive(item.name)">{{item.name}}</a>
-          </router-link>
+          <a class="nav-link" :href="item.redirect">{{item.name}}</a>
         </li>
 
         <li class="nav-item btn get-started">
@@ -31,7 +29,7 @@ export default {
   data: function () {
     return {
       listLinksNav: [
-        { name: "Home", redirect: "#header", isActive: true },
+        { name: "Home", redirect: "#header", isActive: false },
         { name: "Sobre nós", redirect: "#about", isActive: false },
         { name: "Servicos", redirect: "#services", isActive: false },
         { name: "Recursos", redirect: "#features", isActive: false },
@@ -41,13 +39,6 @@ export default {
       ],
       ROUTES,
     };
-  },
-  methods: {
-    setLinkActive(name) {
-      this.listLinksNav.forEach((i) => {
-        i.isActive = i.name === name;
-      });
-    },
   },
 };
 </script>

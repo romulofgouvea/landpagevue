@@ -3,7 +3,7 @@ export const KEYS_SESSION = {
 }
 
 export const ROUTES = {
-    HOME: { path: '/home', name: 'Home' },
-    DASHBOARD: { path: '/', name: 'Dashboard' },
-    LOGIN_DASHBOARD: { path: '/', name: 'LoginDashboard' },
+    HOME: { path: '/', name: 'Home' },
+    DASHBOARD: { path: '/dashboard', name: 'Dashboard' },
+    LOGIN_DASHBOARD: { path: '/login', name: 'LoginDashboard' },
 }

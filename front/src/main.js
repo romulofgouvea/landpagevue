@@ -19,6 +19,7 @@ window._ = _;
 Vue.config.productionTip = false;
 
 //INTERFACES
+import 'jquery-ui-dist/jquery-ui.min.js';
 import 'popper.js/dist/umd/popper';
 import 'bootstrap/dist/js/bootstrap';
 import "./assets/js/home.js";

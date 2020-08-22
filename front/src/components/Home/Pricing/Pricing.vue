@@ -20,7 +20,10 @@
               <li class="na">Planejamento estratégico</li>
             </ul>
             <div class="btn-wrap">
-              <a href="#" class="btn btn-outline-primary btn-buy">Investir agora</a>
+              <router-link
+                class="btn btn-outline-primary btn-buy"
+                :to="ROUTES.LOGIN_DASHBOARD.path"
+              >Use agora</router-link>
             </div>
           </div>
         </div>
@@ -39,7 +42,7 @@
               <li class="na">Planejamento estratégico</li>
             </ul>
             <div class="btn-wrap">
-              <a href="#" class="btn btn-primary btn-buy btn-lg">Investir agora</a>
+              <a href="#contact" class="btn btn-primary btn-buy btn-lg scrollto">Entre em contato</a>
             </div>
           </div>
         </div>
@@ -49,8 +52,15 @@
 </template>
 
 <script>
+import { ROUTES } from "@/config/constants";
+
 export default {
-  name: "Pricing"
+  name: "Pricing",
+  data: function () {
+    return {
+      ROUTES,
+    };
+  },
 };
 </script>
 
