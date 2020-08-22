@@ -6,19 +6,9 @@
       <li class="nav-item dropdown user user-menu">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <img src="../../../assets/images/logo-lh.png" class="user-image" alt="User Image" />
-          <span class="hidden-xs">LHConsultoria</span>
+          <span class="hidden-xs text-black">LHConsultoria</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <!-- <div class="dropdown-item user-header">
-            <img src="../../../assets/images/logo-lh.png" class="img-circle" alt="User Image" />
-
-            <p>LHConsultoria</p>
-            <p>Administração</p>
-            <small>Membro desde 2020</small>
-          </div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-user mr-2"></i> Meu perfil
-          </a>-->
           <a href="#" class="dropdown-item">
             <i class="fas fa-user mr-2"></i> Meu perfil
           </a>

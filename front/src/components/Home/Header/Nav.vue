@@ -92,8 +92,8 @@ export default {
         font-size: 14px;
         font-family: "Open Sans", sans-serif;
         &:hover {
-          color: $primary;
           text-decoration: none;
+          color: $primary;
         }
       }
 
@@ -103,6 +103,12 @@ export default {
           text-decoration: none;
         }
       }
+    }
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
     }
   }
 

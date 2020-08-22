@@ -13,11 +13,13 @@ $home-title-white:    #111;
 $home-title-black:    #888;
 
 //Genral ------------------------------
+$black:    #222;
 
 $colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
   (
+    "black": $black,
     "home-color-logo": #333,
     "home-black": $home-black,
     "home-white": $home-white,
